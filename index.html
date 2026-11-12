@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#241524">
+
+    <title>MM® — Escáner de Precios</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/functions.js" defer></script>
+</head>
+
+<body>
+
+<div class="cinema cinema-top"></div>
+<div class="cinema cinema-bottom"></div>
+
+<div class="pagina">
+
+    <header class="topbar">
+        <a class="portafolio"
+           href="https://anmaribaphomet.github.io/mm_portafolio/">
+            ← Regresar al Portfolio
+        </a>
+
+        <div class="marca">
+            <span>MM®</span>
+            <span class="marca-sub">かわいいマーケット</span>
+        </div>
+
+        <span class="version"> 11.26</span>
+    </header>
+
+    <div class="decoracion decoracion-uno">♡</div>
+    <div class="decoracion decoracion-dos">大好き!</div>
+
+    <!-- SANZU-->
+    <div class="personaje-contenedor">
+        <img
+            class="personaje"
+            src="./img/sanzu.png"
+            alt="Sanzu mirando su celular"
+        >
+
+        <div class="personaje-etiqueta">
+             Diseñado por Maria Meza
+        </div>
+    </div>
+
+    <main class="escenario">
+
+        <!-- INTRODUCCIÓN -->
+        <section id="intro" class="pantalla pantalla-intro">
+
+            <div class="intro-etiqueta">
+                <span>✦</span> BIENVENIDO A PROYECTO MM® S05
+            </div>
+
+            <div class="intro-contenido">
+                <p class="japones">いらっしゃいませ!</p>
+
+                <h1>
+                    Escáner de
+                    <span>Precios.</span>
+                </h1>
+
+                <p class="descripcion">
+                    Este proyecto es una simulacion de un escáner de precios realizado
+                    en la materia de Simulacion de Sistemas de la Carrera de Ingenieria 
+                    en Sistemas de Información de la Universidad de Sonora.
+                </p>
+
+                <div class="intro-detalles">
+                    <div>
+                        <span class="detalle-numero">01</span>
+                        <span>ESCANEA</span>
+                    </div>
+                    <div>
+                        <span class="detalle-numero">02</span>
+                        <span>ENCUENTRA</span>
+                    </div>
+                    <div>
+                        <span class="detalle-numero">03</span>
+                        <span>VISUALIZA</span>
+                    </div>
+                </div>
+
+                <button id="btn-start" class="btn-start" type="button">
+                    <span>EMPEZAR</span>
+                    <span class="flecha">--></span>
+                </button>
+            </div>
+
+            <div class="intro-pie">
+                <span>PROYECTO ORIGINAL 2026</span>
+                <span>MX · SONORA</span>
+            </div>
+
+        </section>
+
+
+        <!-- LECTOR -->
+        <section id="lector" class="pantalla pantalla-lector" hidden>
+
+            <div class="lector-header">
+                <div>
+                    <span class="seccion-mini">PROYECTOS MM / TERMINAL 01</span>
+                    <h2>ESCANEA<span>.</span></h2>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard">
+
+                <!-- PANEL CENTRAL: PRODUCTO -->
+                <section class="panel-producto">
+
+                    <div class="panel-titulo">
+                        <span>01 / Revelador de Producto</span>
+                        <span>商品</span>
+                    </div>
+
+                    <div class="producto-escenario">
+
+                        
+
+                        <div class="producto-placeholder" id="placeholder">
+                            <span class="placeholder-icon">♡</span>
+                            <p>TU PRODUCTO<br>APARECERA AQUÍ</p>
+                            <span>ESPERANDO ESCANEO...</span>
+                        </div>
+
+                        <div id="producto" class="producto" hidden>
+                            <div class="producto-imagen-fondo">
+                                <img
+                                    id="imagen"
+                                    class="imagen"
+                                    src="./img/error.png"
+                                    alt=""
+                                >
+                            </div>
+
+                            <div class="producto-info">
+                                <span class="producto-categoria">
+                                    PRODUCTO / 商品
+                                </span>
+
+                                <p id="nombre_precio" class="nombre-precio"></p>
+
+                                <span class="precio-etiqueta">
+                                    PRECIO / 価格
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="producto-footer">
+                        <span id="mensaje" aria-live="polite">
+                            Esperando producto...
+                        </span>
+                        <span>♡ </span>
+                    </div>
+
+                    <div class="barra-contenedor">
+                        <div class="barra" id="barra"></div>
+                    </div>
+
+                </section>
+
+
+                <!-- PANEL LATERAL: ESCÁNER -->
+                <aside class="panel-scanner">
+
+                    <div class="panel-titulo panel-titulo-claro">
+                        <span>02 / ESCÁNER</span>
+                        <span>読取</span>
+                    </div>
+
+                    <div class="scanner-visual">
+
+                        <div class="scanner-icono">▥</div>
+
+                        <span class="scanner-label">
+                            ENTRADA EN VIVO
+                        </span>
+
+                        <div class="codigo-pantalla">
+                            <span id="codigo-visual">_</span>
+                            <span class="cursor"></span>
+                        </div>
+
+                        <div class="scanner-linea">
+                            <span></span>
+                        </div>
+
+                        <div class="scanner-estado">
+                            <span class="punto"></span>
+                            <span id="estado-lectura">ESPERANDO ENTRADA</span>
+                        </div>
+
+                    </div>
+
+                    <div class="scanner-instrucciones">
+                        <span>COMO USAR</span>
+                        <p>
+                            Usa tu lector de códigos de barras
+                            o escribe el código con tu teclado.
+                        </p>
+                    </div>
+
+                    <div class="scanner-tecla">
+                        <span>PRESIONA</span>
+                        <kbd>ENTER</kbd>
+                        <span>PARA BUSCAR</span>
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- CÓDIGOS DE PRUEBA -->
+            <section class="panel-pruebas">
+
+                <div class="pruebas-header">
+                    <div>
+                        <span class="seccion-mini">ACCESO RÁPIDO</span>
+                        <h3>Prueba un producto <span>♡</span></h3>
+                    </div>
+
+                </div>
+
+                <div id="chips" class="chips"></div>
+
+            </section>
+
+
+            <div class="lector-footer">
+                <span>MM® — ♥</span>
+
+                <button id="btn-inicio" type="button">
+                    ← Regresar al Inicio
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <aside class="decoracion-lateral">
+        <span>かわいい</span>
+        <span>♥</span>
+        <span>MM-001</span>
+    </aside>
+
+</div>
+
+<footer class="pie">
+    DESIGNED BY Maria Meza
+</footer>
+
+</body>
+</html>
